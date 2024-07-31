@@ -49,6 +49,7 @@ class TradingDatabase:
 
     def record_owned_stocks_history(self):
         """Record the current state of owned stocks in history."""
+        print(f"Recording history at: {datetime.datetime.now().isoformat()}")
         self.owned_stocks_history.append({
             'timestamp': datetime.datetime.now().isoformat(),
             'owned_stocks': self.owned_stocks.copy()
