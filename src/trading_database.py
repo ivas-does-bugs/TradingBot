@@ -118,24 +118,3 @@ class TradingDatabase:
                 self.owned_stocks_history = json.load(file)
         except FileNotFoundError:
             self.owned_stocks_history = []
-
-# Example usage
-if __name__ == "__main__":
-    db = TradingDatabase()
-    
-    # Add some transactions
-    transaction_id1 = db.add_transaction('AAPL', 10, 150.0, 'buy')
-    transaction_id2 = db.add_transaction('GOOGL', 5, 2800.0, 'buy')
-    transaction_id3 = db.add_transaction('AAPL', 5, 155.0, 'sell')
-
-    # List all transactions
-    print("All Transactions:", db.list_transactions())
-    
-    # Retrieve a transaction
-    print("Transaction ID 1:", db.get_transaction(transaction_id1))
-    
-    # List all currently owned stocks
-    print("Currently Owned Stocks:", db.list_owned_stocks())
-    
-    # List owned stocks history
-    print("Owned Stocks History:", db.list_owned_stocks_history())
